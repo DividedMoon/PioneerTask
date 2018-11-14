@@ -22,7 +22,7 @@ heroList = {number: number, "廉颇": "105", "小乔": "106", "赵云": "107",
             "橘右京": "163", "亚瑟": "166", "孙悟空": "167",
             "牛魔": "168", "后羿": "169", "刘备": "170",
             }
-url = 'https://pvp.qq.com/web201605/herodetail/'+heroList[number]+'.shtml'
+url = 'https://pvp.qq.com/web201605/herodetail/'+str(heroList[number])+'.shtml'
 r = requests.get(url)
 r.encoding = r.apparent_encoding
 demo = r.text
@@ -45,12 +45,19 @@ heroTitle = soup.find('h3', 'cover-title')
 heroName = soup.find('h2', 'cover-name')
 # 获取英雄的头衔和姓名
 
-print(heroTitle.string+' : '+heroName.string)
+# 需要完善 抛异常
+try:
+    print(heroTitle.string + ' : ' + heroName.string)
+except:
+    attribute_error: "此英雄不存在"
 for i in range(len(skillName)-1):
     print(skillName[i])
     print(skillDesc[i])
     print()
 
-print("人物故事 ：")
-for i in soup.find('div', 'pop-bd').p.stripped_strings:
-    print(i)
+try:
+    print("人物故事 ：")
+    for i in soup.find('div', 'pop-bd').p.stripped_strings:
+        print(i)
+except:
+    attribute_error: "此英雄不存在"
