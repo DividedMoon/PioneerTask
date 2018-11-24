@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">
+        <label for="username">username</label>
+        <input type="text" name="username" id="username" required>
+        <input type="submit" value="submit">
+    </form>
+    {% if name %}
+    <p>Hello {{name}}</p>
+    {% else %}
+    <p>Hello World</p>
+    {% endif %}
+    <div>装备名称：{{item_name}}</div>
+    <div>装备售价：{{item_price}}</div>
+    <div>装备价格：{{item_total_price}}</div>
+    <div>技能描述：{{des1}}</div>
+    {% if des2 %}
+    <div>技能描述：{{des2}}</div>
+    {% endif %}
+</body>
+</html>
