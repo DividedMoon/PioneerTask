@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('true-index.html')
+    return render_template('index.html')
 
 
 @app.route('/item', methods=('GET', 'POST'))
@@ -25,7 +25,7 @@ def test():
     des2 = "这个装备只有那一个效果啦"
     if 'des2' in result[0]:
         des2 = result[0][7].replace('<p>', '').replace('<br>', ' ').replace('</p>', '')
-    return render_template('test.html', name=user,
+    return render_template('item.html', name=user,
                            item_name=item_name,
                            item_price=item_price,
                            item_total_price=item_total_price,
@@ -52,7 +52,7 @@ def hero():
         skill_name.append(x.b.string)
     for x in soup.find_all('p', 'skill-desc'):
         skill_desc.append(x.string)
-    return render_template('index.html',
+    return render_template('hero.html',
                            hero_id=hero_number,
                            hero_name=hero_name,
                            hero_title=result[0][3],

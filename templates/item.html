@@ -5,22 +5,12 @@
     <title>PioneerTask</title>
 </head>
 <body>
-    {% for i in name %}
-    <div>名称 ：
-        {{ i }}
-    </div>
-    <div>售价 ：
-        {{ price[name.index(i)] }}
-    </div>
-    <div>价格 ：
-        {{ total_price[name.index(i)] }}
-    </div>
-    <div>特征：<br>
-        <p>{{ des1[name.index(i)] }}</p>
-        {% if des2 %}
-        <p>{{ des2[name.index(i)] }}</p>
-        {%  endif %}
-    </div>
-    {% endfor %}
+    <div>装备名称：{{item_name}}</div>
+    <div>装备售价：{{item_price}}</div>
+    <div>装备价格：{{item_total_price}}</div>
+    <div>技能描述：{{des1}}</div>
+    {% if des2 %}
+    <div>技能描述：{{des2}}</div>
+    {% endif %}
 </body>
 </html>
