@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request, render_template
 import requests
-from  db import get_item_db, get_hero_db
+from db import get_item_db, get_hero_db
 from bs4 import BeautifulSoup
 app = Flask(__name__)
 
@@ -61,4 +61,4 @@ def hero():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

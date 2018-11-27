@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Pioneer Task</title>
     <style>
+        body{
+            background: linear-gradient(lightgray,gray);
+        }
         p{
             color: blue;
             font-style: italic;
@@ -15,23 +18,30 @@
         .img{
             position: absolute;
             right: 100px;
-            top: 100px;
+            top: 150px;
+        }
+        body div:nth-child(1){
+            margin-left: 100px;
+            margin-top: 100px;
         }
     </style>
 </head>
 <body>
-    {% if hero_title != 'None' and hero_name != 'None' %}
-    <h1>{{ hero_title }} : {{ hero_name }}</h1>
-    <p>技能说明:</p>
+    <div>
+        {% if hero_title != 'None' and hero_name != 'None' %}
+        <h1>{{ hero_title }} : {{ hero_name }}</h1>
+        <p>技能说明:</p>
 
-    <ul style="width: 500px">
-        {% for i in skill_name %}
-        <li>{{ i }}</li>
-        <li>{{ skill_desc[skill_name.index(i)] }}</li>
-        <br>
-        {% endfor %}
-    </ul>
-    {% endif %}
+        <ul style="width: 500px">
+            {% for i in skill_name %}
+            <li>{{ i }}</li>
+            <li>{{ skill_desc[skill_name.index(i)] }}</li>
+            <br>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    
     <div class="img">
         <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/{{hero_id}}/{{hero_id}}-mobileskin-1.jpg">
     </div>

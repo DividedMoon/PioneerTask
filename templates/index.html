@@ -3,19 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>PioneerTask</title>
+    <style>
+        body{
+            position: absolute;
+            background: linear-gradient(lightgray,white)
+
+        }
+        .hero_check{
+            position: relative;
+            top: 100px;
+            left: 200px;
+        }
+        .hero_check label{
+            font-size: 30px;
+        }
+        .hero_check input[type='text']{
+            width: 200px;
+            height: 30px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .hero_check input[type='submit']{
+            width: 80px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(lightgray,white);
+        }
+        .item_check{
+            position: relative;
+            top: -50px;
+            right: -1000px;
+        }
+        .item_check label{
+            font-size: 30px;
+        }
+        .item_check input[type='text']{
+            width: 200px;
+            height: 30px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .item_check input[type='submit']{
+            width: 80px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(lightgray,white);
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <div class="hero_check">
         <form action="/hero" method="post">
-            <label for="name">请输入想要查询的英雄：</label>
-            <input type="text" name="hero_name" class="name" id="name">
+            <label for="name">请输入想要查询的英雄：</label><br>
+            <input type="text" name="hero_name" class="name" id="name"><br>
             <input type="submit" value="check it!" class="submit">
         </form>
     </div>
-    <div>
+    <div class="item_check">
         <form action="/item" method="post">
-            <label for="iname">请输入想要查询的装备：</label>
-            <input type="text" name="item_name" class="iname" id="iname">
+            <label for="iname">请输入想要查询的装备：</label><br>
+            <input type="text" name="item_name" class="iname" id="iname"><br>
             <input type="submit" value="check it!" class="submit">
         </form>
 
