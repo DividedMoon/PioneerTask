@@ -1,4 +1,5 @@
-import pymysql, json
+import pymysql
+import json
 import urllib.request
 
 url = 'https://pvp.qq.com/web201605/js/herolist.json'
