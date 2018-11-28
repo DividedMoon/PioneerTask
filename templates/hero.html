@@ -34,9 +34,11 @@
 
         <ul style="width: 500px">
             {% for i in skill_name %}
-            <li>{{ i }}</li>
+            {% if i != 'None' %}
+            <li style="font-size: 30px; color: black;">{{ i }}:</li>
             <li>{{ skill_desc[skill_name.index(i)] }}</li>
             <br>
+            {% endif %}
             {% endfor %}
         </ul>
         {% endif %}
